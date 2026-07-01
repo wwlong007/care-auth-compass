@@ -22,6 +22,8 @@ public class PolicyRevisionEntity {
     private LocalDate effectiveThrough;
     private LocalDateTime importedAt;
     private String status;
+    private String outcome;
+    private String queueName;
 
     protected PolicyRevisionEntity() {
     }
@@ -38,4 +40,6 @@ public class PolicyRevisionEntity {
     public LocalDate getEffectiveThrough() { return effectiveThrough; }
     public LocalDateTime getImportedAt() { return importedAt; }
     public String getStatus() { return status; }
+    public String getOutcome() { return outcome; }
+    public String getQueueName() { return queueName; }
 }

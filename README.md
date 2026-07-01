@@ -1,13 +1,12 @@
 # CareAuth Compass
 
-CareAuth Compass is a simulated enterprise prior authorization platform for
-referral intake, payer policy evaluation, clinical checklist generation, work
-queue routing, audit observation, and outbox publishing.
+CareAuth Compass is an enterprise prior authorization platform for referral
+intake, payer policy evaluation, clinical checklist generation, work queue
+routing, audit observation, and outbox publishing.
 
-The repository is intentionally large enough to look and feel like a real
-service. It includes domain policies, Spring API boundaries, JPA-facing
-infrastructure types, in-memory adapters used by scenario verification, and a
-CLI verifier for payer policy incidents.
+The service includes domain policies, Spring API boundaries, JPA-backed policy
+storage, in-memory adapters for local scenario verification, payer integration
+adapters, reporting projections, and a CLI verifier for payer policy incidents.
 
 ## Build
 
