@@ -1,6 +1,43 @@
+# Build output
 target/
+build/
+out/
+
+# Local Maven/Gradle state
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+.gradle/
+
+# Java artifacts
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+hs_err_pid*
+replay_pid*
+
+# IDE/editor files
 .idea/
 .vscode/
 *.iml
+*.ipr
+*.iws
+.classpath
+.project
+.settings/
+
+# OS and local files
 .DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.swp
+*.swo
+.env
+.env.*
+
+# Local evaluation assets must never be pushed with the candidate repo
+evaluation_tests/
+reference_solution/
 .evaluation-work/
