@@ -7,21 +7,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NightlyQueueRefreshJob {
-    private final ReferralRepository referralRepository;
+    private final RetroQueueRefreshPlanner refreshPlanner;
     private final LegacyQueueDecisionAssembler legacyQueueDecisionAssembler;
 
     public NightlyQueueRefreshJob(ReferralRepository referralRepository,
                                   LegacyQueueDecisionAssembler legacyQueueDecisionAssembler) {
-        this.referralRepository = referralRepository;
+        this.refreshPlanner = new RetroQueueRefreshPlanner(referralRepository);
         this.legacyQueueDecisionAssembler = legacyQueueDecisionAssembler;
     }
 
     public List<AuthorizationDecision> refreshOpenQueues() {
         List<AuthorizationDecision> decisions = new ArrayList<>();
-        for (Referral referral : referralRepository.findAll()) {
+        for (Referral referral : refreshPlanner.planRefreshCandidates()) {
             AuthorizationDecision decision = legacyQueueDecisionAssembler.assemble(referral);
             referral.applyDecision(decision, false);
-            referralRepository.save(referral);
             decisions.add(decision);
         }
         return decisions;

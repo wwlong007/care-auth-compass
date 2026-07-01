@@ -4,6 +4,7 @@ public enum SiteOfCare {
     OFFICE,
     HOSPITAL_OUTPATIENT,
     AMBULATORY_SURGERY_CENTER,
+    HOME,
     IMAGING_CENTER;
 
 }
