@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: careauth-compass
+  datasource:
+    url: jdbc:h2:mem:careauth;MODE=PostgreSQL;DB_CLOSE_DELAY=-1
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        format_sql: true
+  flyway:
+    enabled: true
+careauth:
+  policy-cache:
+    maximum-size: 10000
+    expire-after-write-minutes: 15
